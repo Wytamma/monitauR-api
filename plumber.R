@@ -54,6 +54,20 @@ set_status_of_job <- function(job_id, status) {
 }
 
 
+#* Delete jobs
+#* @delete /jobs
+function() {
+  jobs <<-
+  tibble(
+    name = character(),
+    status = character(),
+    error = character(),
+    id = integer(),
+    created = character(),
+    updated = character()
+  )
+}
+
 
 #* Set job status to running
 #* @post /jobs/<id:int>/start
@@ -145,6 +159,21 @@ create_new_step <- function(job_id, msg) {
 #* @post /steps
 function(job_id, msg = "") {
   create_new_step(job_id, msg)
+}
+
+
+#* Delete steps
+#* @delete /steps
+function(id) {
+  steps <<-
+  tibble(
+    msg = character(),
+    job_id = integer(),
+    id = integer(),
+    created = character(),
+    updated = character()
+  )
+
 }
 
 #* @filter cors
