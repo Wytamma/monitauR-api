@@ -1,5 +1,7 @@
 # monitauR-api
 
+Example API for [monitauR](https://github.com/Wytamma/monitauR)
+
 ## Heroku deploy
 
 ```
